@@ -139,10 +139,10 @@ a:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; border-ra
   .barra .in { gap: 10px; padding: 8px 14px; }
   .marca-mini span { display: none; }
   .tabs a { padding: 9px 12px; font-size: 15px; }
-  .escena { height: 300px; }
-  .tw.cen { margin-left: -105px; } .tw.cen .tel { width: 210px; height: 290px; }
-  .tw.izq { left: -30px; } .tw.der { right: -30px; }
-  .tw.izq .tel, .tw.der .tel { width: 170px; height: 230px; }
+  .escena { height: 470px; }
+  .tw.cen { margin-left: -118px; } .tw.cen .tel { width: 236px; height: 470px; }
+  .tw.izq { left: -44px; } .tw.der { right: -44px; }
+  .tw.izq .tel, .tw.der .tel { width: 184px; height: 370px; }
   .bento { grid-template-columns: minmax(0, 1fr); }
   .k-registro, .k-postura, .k-stats, .k-historia, .k-diario, .k-equipo, .k-nueva { grid-column: auto; min-height: 460px; }
   .celda-txt { padding: 26px 24px 0; }
