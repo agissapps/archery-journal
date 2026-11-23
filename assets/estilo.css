@@ -390,3 +390,89 @@ a:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; border-ra
 .nombre-app { margin-top: 14px; font-weight: 800; font-size: 22px; letter-spacing: -.01em; color: var(--azul-osc); }
 .hero.play .nombre-app { animation: sube .6s ease-out 1.3s both; }
 @media (prefers-reduced-motion: reduce) { .hero.play .nombre-app { animation: none; } }
+
+/* ---------- capas vivas sobre las capturas de la portada ---------- */
+.celda-img .pant { position: relative; width: min(66%, 260px); container-type: inline-size; margin-bottom: -2px; }
+.celda-img .pant img { width: 100%; display: block; margin: 0; }
+.viva { position: absolute; font-family: inherit; color: #1d1b20; }
+.viva svg { display: block; }
+/* registro: diana que se toca */
+.v-registro { top: 6.2%; left: 0; right: 0; bottom: 0; background: #f4f0f8; display: flex; flex-direction: column; align-items: center; padding-top: 3cqw; }
+.vr-top { display: grid; grid-template-columns: auto 1fr 1fr; align-items: center; gap: 4cqw; width: 88%; background: #fff; border-radius: 5cqw; padding: 3cqw 4cqw; }
+.vr-top b { display: block; font-weight: 800; font-size: 6cqw; line-height: 1.1; }
+.vr-top span { font-size: 3.6cqw; font-weight: 600; color: #6b6772; }
+.vr-aro { width: 14cqw; height: 14cqw; border-radius: 50%; border: 1.6cqw solid #6a3fc7; display: grid; place-items: center; }
+.vr-aro b { font-size: 5cqw; }
+.vr-pista { margin-top: 4cqw; font-weight: 800; font-size: 4.6cqw; color: #1d1b20; transition: opacity .3s; }
+.vr-pista.fuera { opacity: 0; }
+.vr-svg { width: 96%; margin-top: 2cqw; touch-action: none; cursor: crosshair; -webkit-user-select: none; user-select: none; }
+.vr-lupa { opacity: 0; pointer-events: none; transition: opacity .12s; }
+.vr-lupa.on { opacity: 1; }
+.vr-f { animation: vr-cae .25s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes vr-cae { from { opacity: 0; transform-box: fill-box; scale: 2.2; } to { opacity: 1; scale: 1; } }
+.vr-otra { margin-top: 3cqw; font: inherit; font-weight: 800; font-size: 4.4cqw; color: #fff; background: #6a3fc7; border: 0; border-radius: 999px; padding: 2.4cqw 6cqw; cursor: pointer; }
+@media (prefers-reduced-motion: no-preference) { .vr-pista { animation: vr-late 1.6s ease-in-out infinite; } }
+@keyframes vr-late { 50% { transform: scale(1.08); } }
+/* postura: la gráfica se dibuja */
+.v-postura { top: 80.6%; left: 0; right: 0; height: 11.6%; background: #11151c; color: #fff; padding: 1.2cqw 3cqw 0; font-size: 3cqw; font-weight: 700; }
+.vp-bar { display: flex; justify-content: space-between; gap: 2cqw; white-space: nowrap; }
+.vp-a b { color: #3aa7e0; } .vp-b b { color: #e03e32; } .vp-e { color: #fff; font-weight: 800; }
+.vp-med { position: relative; height: 1.3cqw; margin-top: .8cqw; border-radius: 9px; background: #2a3140; overflow: hidden; }
+.vp-med i { position: absolute; top: 0; bottom: 0; }
+.vp-l { left: 0; width: 56%; background: #3aa7e0; } .vp-r { right: 0; width: 46%; background: #e03e32; }
+.vp-svg { width: 100%; height: 13cqw; margin-top: .6cqw; }
+.vp-linea { fill: none; stroke: #fff; stroke-width: 1.4; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.vp-corte { stroke: rgba(255,255,255,.5); stroke-dasharray: 2 2; vector-effect: non-scaling-stroke; }
+.vp-et { display: flex; justify-content: space-around; font-size: 2.6cqw; color: #aab3c2; }
+@media (prefers-reduced-motion: no-preference) {
+  .v-postura .vp-linea { stroke-dashoffset: 1; }
+  .v-postura.vista .vp-linea { animation: vp-dib 4s ease-in-out infinite; }
+  .v-postura.vista .vp-l { animation: vp-l 4s ease-in-out infinite; }
+  .v-postura.vista .vp-r { animation: vp-r 4s ease-in-out infinite; }
+}
+@keyframes vp-dib { 0% { stroke-dashoffset: 1; } 70%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes vp-l { 0%, 100% { width: 30%; } 50% { width: 58%; } 75% { width: 52%; } }
+@keyframes vp-r { 0%, 100% { width: 22%; } 50% { width: 44%; } 75% { width: 47%; } }
+/* estadísticas: se grafica y la diana recibe tiros */
+.v-stats { top: 21.4%; left: 0; right: 0; bottom: 7.4%; background: #f4f0f8; padding: 0 3cqw; display: grid; grid-template-rows: auto 1fr; gap: 2.4cqw; }
+.vs-card { background: #fff; border-radius: 4cqw; padding: 3cqw 4cqw; }
+.vs-card p { font-weight: 800; font-size: 4.2cqw; margin-bottom: 2cqw; }
+.vs-card:first-child svg { width: 100%; height: 30cqw; }
+.vs-rej line { stroke: #e4e0ea; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.vs-linea { fill: none; stroke: #6a3fc7; stroke-width: 2.2; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-dasharray: 1; }
+.vs-diana { width: 70%; margin: 0 auto; }
+.vs-pts circle { fill: #b23ac7; stroke: #1d1b20; stroke-width: .08; }
+.vs-grupo { fill: none; stroke: #fff; stroke-width: .28; stroke-dasharray: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .v-stats .vs-linea, .v-stats .vs-grupo { stroke-dashoffset: 1; }
+  .v-stats .vs-pts circle { opacity: 0; }
+  .v-stats.vista .vs-linea { animation: dibuja 1.6s ease-out .2s forwards; }
+  .v-stats.vista .vs-pts circle { transform-box: fill-box; transform-origin: center; animation: impacto .35s cubic-bezier(.3,1.6,.5,1) calc(1s + var(--i) * 70ms) forwards; }
+  .v-stats.vista .vs-grupo { animation: dibuja 1s ease-out 3.6s forwards; }
+}
+@keyframes dibuja { to { stroke-dashoffset: 0; } }
+@keyframes impacto { from { opacity: 0; transform: scale(3); } to { opacity: 1; transform: scale(1); } }
+/* equipo: la flecha se dobla */
+.v-equipo { top: 10.6%; left: 4%; right: 4%; height: 11%; background: #fff; display: grid; place-items: center; }
+.v-equipo svg { width: 100%; }
+.ve-v { fill: none; stroke: #9ccf9f; stroke-width: 2.6; stroke-linecap: round; }
+/* nueva sesión: carrusel de dianas */
+.v-nueva { top: 47.4%; left: 2.6%; right: 0; height: 12.4%; background: #fff; }
+.vn-tira { display: flex; gap: 2cqw; height: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 6cqw 0 1cqw; -webkit-overflow-scrolling: touch; }
+.vn-tira::-webkit-scrollbar { display: none; }
+.vn-c { flex: 0 0 22cqw; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1cqw; border: .5cqw solid transparent; border-radius: 3.6cqw; background: none; font: inherit; font-size: 2.9cqw; font-weight: 700; color: #1d1b20; cursor: pointer; padding: 1cqw; line-height: 1.1; text-align: center; }
+.vn-c svg { width: 10cqw; height: 10cqw; }
+.vn-c.sel { border-color: #6a3fc7; background: #efe8fb; }
+.vn-pista { position: absolute; right: 2cqw; top: -5.2cqw; font-style: normal; font-weight: 800; font-size: 3cqw; color: #fff; background: #6a3fc7; border-radius: 999px; padding: .6cqw 2.4cqw; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .v-nueva.vista .vn-tira { animation: vn-asoma 1.8s ease-in-out .4s 1; }
+  .vn-pista { animation: vr-late 1.6s ease-in-out infinite; }
+}
+@keyframes vn-asoma { 40% { transform: translateX(-14cqw); } }
+.celda .viva p { color: #1d1b20; margin: 0; max-width: none; line-height: 1.2; }
+.celda .v-stats .vs-card p { margin-bottom: 2cqw; }
+.v-postura { top: 78.4%; height: 14%; }
+.vs-linea { vector-effect: none; stroke-width: 1.3; }
+.vp-linea { vector-effect: none; stroke-width: 1; }
+.vs-diana { width: 88%; } .vs-grupo { stroke-width: .34; }
+.vr-pista.fuera { animation: none; opacity: 0; }
